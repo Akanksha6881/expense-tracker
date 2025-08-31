@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Add Expense</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+  <div class="brand">💰 Expense Tracker</div>
+  <nav>
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('add_expense') }}">Add Expense</a>
+    <a href="{{ url_for('view_expenses') }}">View Expenses</a>
+    <a href="{{ url_for('about') }}">About</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Add Expense</h2>
+    <form method="post" action="{{ url_for('add_expense') }}">
+      <label>Item</label>
+      <input type="text" name="item" required>
+      <label>Amount</label>
+      <input type="number" name="amount" step="0.01" required>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
